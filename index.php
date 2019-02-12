@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 	
@@ -42,6 +41,36 @@
 		  gtag('js', new Date());
 
 		  gtag('config', 'UA-120708795-1');
+
+		  function myFunction(e) {
+		        var xmlhttp = new XMLHttpRequest();
+		        if (e.currentTarget.id == "maker") {
+		            xmlhttp.onreadystatechange = function() {
+		                if (this.readyState == 4 && this.status == 200) {
+		                  document.getElementById("model").innerHTML = this.responseText;
+		                }
+		            };
+		        } else if (e.currentTarget.id == "model") {
+		          xmlhttp.onreadystatechange = function() {
+		                if (this.readyState == 4 && this.status == 200) {
+		                  document.getElementById("part").innerHTML = this.responseText;
+		                }
+		            };
+		        } else if (e.currentTarget.id == "part")  {
+		          xmlhttp.onreadystatechange = function() {
+		                if (this.readyState == 4 && this.status == 200) {
+		                  document.getElementById("year").innerHTML = this.responseText;
+		                }
+		            };
+		        }
+		          if (e.currentTarget.id == "maker")
+		            xmlhttp.open("GET", "show.php?maker=" + e.target.value, true);
+		          else if (e.currentTarget.id == "model") 
+		            xmlhttp.open("GET", "show.php?model=" + e.target.value, true);
+		          else if (e.currentTarget.id == "part") 
+		            xmlhttp.open("GET", "show.php?part=" + e.target.value, true);
+		          xmlhttp.send();
+	   		}
 		</script>	
 	</head>
 	<body>		<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
@@ -93,115 +122,17 @@
 									<img src="images/arrow.png" class="arrowrequired d-block qap_make" alt="Arrow for Required" />
 									<label for="qap_make" class="col-2 col-form-label">Make <span class="text-danger">*</span></label>
 									<div class="col-10">
-										<select name="qap_make" id="qap_make" class="form-control">
-											<option value="">Select Make</option>
-											
-												<option value="AMC">AMC</option>
-											
-												<option value="Acura">Acura</option>
-											
-												<option value="Alfa-Romeo">Alfa-Romeo</option>
-											
-												<option value="Audi">Audi</option>
-											
-												<option value="BMW">BMW</option>
-											
-												<option value="British-Leyland">British-Leyland</option>
-											
-												<option value="Buick">Buick</option>
-											
-												<option value="Cadillac">Cadillac</option>
-											
-												<option value="Chevy">Chevy</option>
-											
-												<option value="Chrysler">Chrysler</option>
-											
-												<option value="Cooper">Cooper</option>
-											
-												<option value="Daewoo">Daewoo</option>
-											
-												<option value="Daihatsu">Daihatsu</option>
-											
-												<option value="Dodge">Dodge</option>
-											
-												<option value="Eagle">Eagle</option>
-											
-												<option value="Fiat-Lancia">Fiat-Lancia</option>
-											
-												<option value="Ford">Ford</option>
-											
-												<option value="GM">GM</option>
-											
-												<option value="GMC">GMC</option>
-											
-												<option value="Honda">Honda</option>
-											
-												<option value="Hummer">Hummer</option>
-											
-												<option value="Hyundai">Hyundai</option>
-											
-												<option value="Infiniti">Infiniti</option>
-											
-												<option value="International">International</option>
-											
-												<option value="Isuzu">Isuzu</option>
-											
-												<option value="Jaguar">Jaguar</option>
-											
-												<option value="Jeep">Jeep</option>
-											
-												<option value="Kia">Kia</option>
-											
-												<option value="Land-Rover">Land-Rover</option>
-											
-												<option value="Lexus">Lexus</option>
-											
-												<option value="Lincoln">Lincoln</option>
-											
-												<option value="Mazda">Mazda</option>
-											
-												<option value="Mercedes-Benz">Mercedes-Benz</option>
-											
-												<option value="Mercury">Mercury</option>
-											
-												<option value="Mitsubishi">Mitsubishi</option>
-											
-												<option value="Nissan">Nissan</option>
-											
-												<option value="Oldsmobile">Oldsmobile</option>
-											
-												<option value="Opel">Opel</option>
-											
-												<option value="Peugeot">Peugeot</option>
-											
-												<option value="Plymouth">Plymouth</option>
-											
-												<option value="Pontiac">Pontiac</option>
-											
-												<option value="Porsche">Porsche</option>
-											
-												<option value="Renault">Renault</option>
-											
-												<option value="Rover">Rover</option>
-											
-												<option value="Saab">Saab</option>
-											
-												<option value="Saturn">Saturn</option>
-											
-												<option value="Scion">Scion</option>
-											
-												<option value="Subaru">Subaru</option>
-											
-												<option value="Suzuki">Suzuki</option>
-											
-												<option value="Toyota">Toyota</option>
-											
-												<option value="Volkswagen">Volkswagen</option>
-											
-												<option value="Volvo">Volvo</option>
-											
-												<option value="Yugo">Yugo</option>
-											
+										<select name="qap_make" id="maker" oninput="myFunction(event)" class="form-control">
+		                                       <option disabled selected>Select Maker</option>
+		                                       <?php
+		                                          include_once "includes/database.php";
+
+		                                          $sql="SELECT maker_name FROM tbl_car_maker ORDER BY maker_name";
+		                                          $result=$conn->query($sql);
+		                                          while ($row=$result->fetch_assoc()) {
+		                                            echo "<option value=\"".$row['maker_name']."\">".$row['maker_name']."</option>";
+		                                          }
+		                                        ?>
 										</select>
 									</div>
 								</div>
@@ -209,8 +140,8 @@
 									<img src="images/arrow.png" class="arrowrequired d-none qap_model" alt="Arrow for Required" />
 									<label for="qap_model" class="col-2 col-form-label">Model <span class="text-danger">*</span></label>
 									<div class="col-10">
-										<select name="qap_model" id="qap_model" class="form-control">
-											<option value="">Select Model</option>
+										<select name="qap_model" id="model" oninput="myFunction(event)" class="form-control">
+                                      		<option disabled selected>Select Model</option>
 										</select>
 									</div>
 								</div>
@@ -218,8 +149,8 @@
 									<img src="images/arrow.png" class="arrowrequired d-none qap_part" alt="Arrow for Required" />
 									<label for="qap_part" class="col-2 col-form-label">Part <span class="text-danger">*</span></label>
 									<div class="col-10">
-										<select name="qap_part" id="qap_part" class="form-control">
-											<option value="">Select Part</option>
+										<select name="qap_part" id="part" oninput="myFunction(event)" class="form-control">
+											<option disabled selected>Select Part</option>
 										</select>
 									</div>
 								</div>
@@ -227,8 +158,8 @@
 									<img src="images/arrow.png" class="arrowrequired d-none qap_year" alt="Arrow for Required" />
 									<label for="qap_year" class="col-2 col-form-label">Year <span class="text-danger">*</span></label>
 									<div class="col-10">
-										<select name="qap_year" id="qap_year" class="form-control">
-											<option value="">Select Year</option>
+										<select name="qap_year" id="year" class="form-control">
+											<option disabled selected>Select Year</option>
 										</select>
 									</div>
 								</div>
