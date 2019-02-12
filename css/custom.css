@@ -24,13 +24,13 @@ select {
 	color:#000 !important;
 }
 .text-blue {
-	color:#ffcc00 !important;
+	color:#404535 !important;
 }
 .text-orange {
-	color:#ff6a00 !important;
+	color:#7db300 !important;
 }
 .text-red {
-	color:#ff8000 !important;
+	color:#b3ff00 !important;
 }
 .parallax {
     width: 100%;
@@ -42,10 +42,10 @@ select {
     background-position: center center;
 }
 .bgblue {
-	background:#ffcc00;
+	background:#404535;
 }
 .bg-grey {
-	background:#ff8000;
+	background:#b3ff00;
 }
 .layer-overlay {
   position: relative;
@@ -62,8 +62,8 @@ select {
 }
 .layer-overlay.overlay-blue::before {
 	background: #ffde0a;
-	background: -webkit-linear-gradient(to right,#ece936ad, #ffcc00c2);
-	background: linear-gradient(to right, #ece936ad, #ffcc00c2);
+	background: -webkit-linear-gradient(to right,#f3ff00ad, #404535c2);
+	background: linear-gradient(to right, #f3ff00ad, #404535c2);
 }
 .layer-overlay.overlay-light::before {
   background-color: rgba(255, 255, 255, 0.4);
@@ -118,7 +118,7 @@ select {
 	font-size:15px;
 }
 .custom-nav  .active .nav-link {
-	background:#ffcc00;
+	background:#b3ff00;
 	border-radius:40px;
 	color:#000 !important;
 }
@@ -170,7 +170,7 @@ select {
 	box-shadow: -1px 1px 12px 2px #0000002e;
 }
 .form-title {
-	background:#ffcc00;
+	background:#404535;
 	width:100%;
 	padding:14px 25px 14px 25px;
 	border-top-left-radius: 8px;
@@ -191,7 +191,7 @@ select {
 	text-align:center;
 }
 .form-title2 {
-	background:#ffcc00;
+	background:#404535;
 	width:100%;
 	padding:14px 25px 14px 25px;
 }
@@ -223,10 +223,10 @@ select {
 	height:35px !important;
 } 
 .form-custompartrequest .form-control:focus, .form-custom .form-control:focus {
-	border:3px solid #ff8000;
+	border:3px solid #b3ff00;
 }
 .btn-custom {
-	background:#ff8000;
+	background:#b3ff00;
 	color:#fff;
 	box-shadow: 0px 1px 2px #bbbbbb;
 	border:none;
@@ -241,7 +241,7 @@ select {
 	color:#000;
 }
 .form-banner-contact {
-	background:#ffcc00;
+	background:#404535;
 	width:100%;
 	margin:10px 0px;
 	text-align:center;
@@ -268,17 +268,17 @@ select {
 	width:35px;
 }
 .lineargradient1 {	
-	background: #ffcc00;
-	background: -webkit-linear-gradient(to right, #ff8000f5, #ffcc00);
-	background: linear-gradient(to right, #ff8000f5, #ffcc00);
+	background: #404535;
+	background: -webkit-linear-gradient(to right, #b3ff00, #404535);
+	background: linear-gradient(to right, #b3ff00, #404535);
 }
 .lineargradient2 {	
-	background: #ffcc00;
+	background: #404535;
 }
 .lineargradient3 {	
-	background: #ffcc00;
-	background: -webkit-linear-gradient(to right, #ffcc00, #ff8000f5);
-	background: linear-gradient(to right,  #ffcc00, #ff8000f5);
+	background: #404535;
+	background: -webkit-linear-gradient(to right, #b3ff00, #b3ff00f5);
+	background: linear-gradient(to right,  #b3ff00, #b3ff00f5);
 }
 .div-parts-block {	
 	width:100%;
@@ -427,7 +427,7 @@ select {
 	color:#fff;
 }
 .sectionppdt{
-	background: #ff8000;
+	background: #b3ff00;
 	padding:1.5rem 0rem;
 }
 .mdhight {
@@ -439,8 +439,8 @@ select {
     transition: box-shadow .2s cubic-bezier(.15,.69,.83,.67);
     width: auto;
     border-radius: 0;
-	border:1px solid #ffcc00;
-	background: #ffcc00;
+	border:1px solid #404535;
+	background: #404535;
 }
 .popularpdt:hover, .blogdiv:hover {
     -webkit-transition: box-shadow .2s cubic-bezier(.15,.69,.83,.67);
@@ -484,7 +484,7 @@ select {
 	font-size: 14px;
 }
 .blogdiv-content {
-	background:#ffcc00;	
+	background:#404535;	
 	padding:15px;
 }
 .blogdiv-content h2 {
@@ -890,7 +890,7 @@ transform: scale(1.1,1.1);
 }
 .infooter ul li a:hover { 
 	text-decoration:none;
-	color:#ff8000;
+	color:#b3ff00;
 }
 .footercopyrightdiv {
 	background:#2e2e2e;
@@ -932,7 +932,7 @@ transform: scale(1.1,1.1);
 }
 .pagebannerh1in h1 {
 	font-size:21pt;
-	color:#ffcc00;
+	color:#404535;
 	text-transform:uppercase;
 	font-weight:bolder;
 	margin:0px;
@@ -965,7 +965,7 @@ transform: scale(1.1,1.1);
 }
 .pagebannerh1inh1 {
 	font-size:21pt;
-	color:#ffcc00;
+	color:#404535;
 	text-transform:uppercase;
 	font-weight:bolder;
 	margin:0px;
@@ -989,11 +989,11 @@ transform: scale(1.1,1.1);
 	font-size:18pt;
 }
 .pagebannerh1 h1 span{
-	color:#ffcc00;
+	color:#404535;
 	font-size:16pt;
 }
 .pagebannerh1h1 span{
-	color:#ffcc00;
+	color:#404535;
 	font-size:16pt;
 }
 .qap-abtbanner img {
@@ -1010,17 +1010,17 @@ transform: scale(1.1,1.1);
 .abtcontent p span {
 	font-size:16pt;
 	font-family:'Montserrat', sans-serif;
-	color:#ff6a00;
+	color:#7db300;
 }
 .qap-abtbanner {
 	margin:60px 0px;
 }
 .bggrey {
-	background:#ffcc00;
+	background:#404535;
 	padding:50px 0px; 
 }
 .bggreypl {
-	background:#ff8000;
+	background:#b3ff00;
 	padding:50px 0px; 
 }
 .subtitle {
@@ -1078,7 +1078,7 @@ transform: scale(1.1,1.1);
 }
 .abtcontent p span a, .abtcontent p span a:hover {
 	text-decoration:none;
-	color:#ff6a00;
+	color:#7db300;
 }
 .ctnumb h1 { 
 	font-size: 25pt;
@@ -1098,7 +1098,7 @@ transform: scale(1.1,1.1);
 	padding:0px;
 }
 .make-listpart ul li{
-	list-style-image: url(../images/pointblue.png);
+	list-style-image: url(../images/point.png);
 	padding: 0px 0px 0px 0px;
     color: #000;
     font-weight: 600;
@@ -1109,7 +1109,7 @@ transform: scale(1.1,1.1);
 }
 .make-listpart ul li a, .make-listpart ul li a:hover{
 	text-decoration:none;
-	color:#ff6a00;
+	color:#7db300;
 }
 .contdivtxt p {
 	text-align:center;
@@ -1158,7 +1158,7 @@ transform: scale(1.1,1.1);
 .divlistblog ul li {
 	width:48%;
 	border-bottom:1px solid transparent;
-	list-style-image: url(../images/pointblue.png);
+	list-style-image: url(../images/point.png);
 }
 .divlistblog ul li a {
 	padding:0px;
@@ -1298,7 +1298,7 @@ transform: scale(1.1,1.1);
     top: 60%;
 }
 .h1bannertitle {
-	background: rgba(179, 143, 0, 0.48);
+	background: rgba(139, 194, 20, 0.71);
     color: #fff;
     width: auto;
     padding: 8px 8px;
@@ -1310,7 +1310,7 @@ transform: scale(1.1,1.1);
 	margin-bottom:3px;
 }
 .h2bannertitle {
-	background: rgba(179, 143, 0, 0.48);
+	background: rgba(139, 194, 20, 0.71);
     color: #fff;
     width: auto;
     padding: 8px 8px;
@@ -1917,7 +1917,7 @@ transform: scale(1.1,1.1);
 	}
 	
 	.custom-nav .nav-link:hover {
-		background: #ffcc00;
+		background: #404535;
 		color: #fff !important;
 	}
 	.custom-nav .nav-link { 
@@ -2030,7 +2030,7 @@ transform: scale(1.1,1.1);
 		box-shadow:-1px 3px 6px #0003
 	}
 	.custom-nav .nav-link:hover {
-		background: #ffcc00;
+		background: #404535;
 		color: #fff !important;
 	}
 	.custom-nav .nav-link { 
@@ -2292,7 +2292,7 @@ transform: scale(1.1,1.1);
 		box-shadow:-1px 3px 6px #0003
 	}
 	.custom-nav .nav-link:hover {
-		background: #ffcc00;
+		background: #404535;
 		color: #fff !important;
 	}
 	.custom-nav .nav-link { 
