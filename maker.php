@@ -14,7 +14,11 @@
 			}
 		}
 	}
-
+  if (isset($_GET["year"])) {
+    if (!empty($_GET["year"])) {
+      header("Location: final.html");
+    }
+  }
   if (isset($_GET["maker"])) {
 
 ?>
@@ -131,7 +135,13 @@
           <div class="invisible invisiblex">height</div>
         </div>
         <!--#partimagetrow0-->        
-        
+        <?php if (isset($_GET["part"])) { ?>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="col-md-12 pagedetailh1in"><h1>USED <span class="text-blue fnt-big">Amg Ambassador Ac Compressor</span> OEM PARTS.</h1></div><div class="subbannerproduct cstbanner2"><img src="images/parts/ac-compressor.png" alt="Air Conditioner Compressor" ></div> 
+        </div>
+      <?php } else {?>
+
         <div class="bannerproduct cstbanner2"><img alt="AMC" src="images/cars/AMC-Rebel.jpg" alt="" /></div>
         
         <div class="col-md-6 col-sm-12 pagebannerh1in positionbottom">
@@ -139,24 +149,20 @@
           <h1>USED <span class="text-white fnt-big"> amc </span> OEM PARTS</h1>
           
         </div>
+      <?php } ?>
         <!--partimagetrow0#-->
-
-        
-
-
-
 
         <div class="col-md-6 col-sm-12 divblk">
           <div class="form-block">
             <div class="form-title">
               <div class="form-titleh1">Find A Part Now</div>
             </div>
-            <form id="qapform" class="form-custom" >
+            <form id="qapform" class="form-custom" action="maker.php">
               <div class="form-group row">
                 <img src="images/arrow.png" class="arrowrequired d-none qap_make" alt="Arrow for Required" />
                 <label for="make" class="col-2 col-form-label">Make <span class="text-danger">*</span></label>
                 <div class="col-10">
-                  <select name="qap_make" id="maker" onchange="myFunction(event)" class="form-control">
+                  <select name="maker" id="maker" onchange="myFunction(event)" class="form-control">
                         <option disabled selected>Maker</option>
                         <?php
                           $sql="SELECT maker_name as maker FROM tbl_car_maker ORDER BY maker_name";
@@ -176,7 +182,7 @@
                 <img src="images/arrow.png" class="arrowrequired d-block qap_model" alt="Arrow for Required" />
                 <label for="modelid" class="col-2 col-form-label">Model <span class="text-danger">*</span></label>
                 <div class="col-10">
-                  <select name="qap_model" id="model" oninput="myFunction(event)" autofocus class="form-control">
+                  <select name="model" id="model" oninput="myFunction(event)" autofocus class="form-control">
                     <option disabled selected>Select Model</option>
                     <?php
                       $sql="SELECT model_name as model FROM tbl_car_model WHERE maker_id=\"".extractId($conn,'maker',$_GET["maker"])."\"";
@@ -196,7 +202,7 @@
                 <img src="images/arrow.png" class="arrowrequired d-none qap_part" alt="Arrow for Required" />
                 <label for="partid" class="col-2 col-form-label">Part <span class="text-danger">*</span></label>
                 <div class="col-10">
-                  <select name="qap_part" id="part" oninput="myFunction(event)" class="form-control">
+                  <select name="part" id="part" oninput="myFunction(event)" class="form-control">
                     <option disabled selected>Select Part</option>
                       <?php
                         echo $_GET["model"];
@@ -220,7 +226,7 @@
                 <img src="images/arrow.png" class="arrowrequired d-none qap_year" alt="Arrow for Required" />
                 <label for="yearid" class="col-2 col-form-label">Year <span class="text-danger">*</span></label>
                 <div class="col-10">
-                  <select name="qap_year" id="year" class="form-control">
+                  <select name="year" id="year" class="form-control">
                     <option disabled selected>Select Year</option>
                     <?php
                       if(isset($_GET["part"])){
@@ -233,7 +239,7 @@
               </div>
               <div class="form-group row">
                 <div class="col-md-7 offset-md-5 col-sm-12">
-                  <button type="button"  name='find' id='find' class="btn btn-custom">Find My Part Now</button>
+                  <button type="submit" id='find' class="btn btn-custom">Find My Part Now</button>
                 </div>
               </div>
             </form>
